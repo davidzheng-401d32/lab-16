@@ -16,7 +16,7 @@ require('./file-events');
 //   });
 // };
 
-const read = async file => {
+const read = async (file) => {
   const fsRead = util.promisify(fs.readFile);
   const data = await fsRead(file);
   EventEmitter.emit('file-read');
@@ -52,5 +52,7 @@ const groupFunction = async file => {
 };
 groupFunction(file);
 
+// read(file);
 
+module.exports = read;
 
